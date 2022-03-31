@@ -5,7 +5,7 @@
 # while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 dir=~/dotfiles-minimal            # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+olddir=~/.dotfiles-old             # old dotfiles backup directory
 platform=$(uname)
 pacman_args="--noconfirm --needed"
 
@@ -55,14 +55,14 @@ function program_installed {
 }
 
 function link_dotfiles {
-    # create dotfiles_old in homedir
+    # create .dotfiles-old in homedir
     echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
     mkdir -p $olddir
 
     # change to the dotfiles directory
     cd $dir
 
-    # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the
+    # move any existing dotfiles in homedir to .dotfiles-old directory, then create symlinks from the
     # homedir to any files in the ~/dotfiles directory specified in $files
     for file in $files; do
         if [[ -f $file || -d $file ]]; then
@@ -205,12 +205,12 @@ function main() {
     echo "[push] Push to github"
     echo "[pull] Pull from github"
     echo "[dotfiles] Install dotfiles only"
-    if [ $(program_installed pacman) == 1]; then
+    if [[ $(program_installed pacman) == 1 ]]; then
         echo "[programs] Install programs (pacman, pacaur, npm) only"
-    elif [ $(program_installed apt-get) == 1]; then
+    elif [[ $(program_installed apt-get) == 1 ]]; then
         echo "[programs] Install programs (apt-get, npm) only"
     fi
-    if [ $(program_installed pacman) == 1]; then
+    if [[ $(program_installed pacman) == 1 ]]; then
         echo "[programs-no-aur] Install official repository programs (pacman, npm) only"
         echo "[aur-only] Install AUR programs only"
         echo "[package-query] Fix outdated package-query"

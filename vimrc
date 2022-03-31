@@ -114,7 +114,8 @@ if exists('g:plugins_enabled')
 
     " Clone NeoBundle if not present
     if empty(glob("~/.vim/bundle/neobundle.vim"))
-    !git clone https://github.com/shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+        " TODO MAKE THIS OPTIONAL
+        !git clone https://github.com/shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     endif
     " Prevent plugin loading on systems without NeoBundle
     " if exists("g:loaded_neobundle")
@@ -261,6 +262,7 @@ let g:gruvbox_italicize_strings=1
 " colorscheme hybrid_reverse
 " colorscheme hybrid_material
 try
+    " TODO: MAKE THIS SILENT
     colorscheme gruvbox
 catch /^Vim\%((\a\++)\)\=:E185/
     colorscheme desert
