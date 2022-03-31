@@ -237,7 +237,7 @@ if exists('g:plugins_enabled'); then
     call neobundle#end()
     " Prompt installation of uninstalled plugins
     NeoBundleCheck
-fi
+endif
 
 " [4] ------ Plugin Configuration ------
 " [4.1] --- General ---
