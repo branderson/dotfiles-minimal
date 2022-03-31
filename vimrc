@@ -233,7 +233,7 @@ if !has('vim_starting')
     " Reload plugins
     call neobundle#call_hook('on_source')
 endif
-if exists("g:plugins_enabled"); then
+if exists("g:plugins_enabled")
     call neobundle#end()
     " Prompt installation of uninstalled plugins
     NeoBundleCheck
