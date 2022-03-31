@@ -108,7 +108,7 @@ au BufNewFile,BufRead *.py
 
 " ------ Plugins ------
 
-if exists('g:plugins_enabled')
+if exists("g:plugins_enabled")
     " Always display airline statusline
     set laststatus=2
     " Hide default statusline text
@@ -233,7 +233,7 @@ if !has('vim_starting')
     " Reload plugins
     call neobundle#call_hook('on_source')
 endif
-if exists('g:plugins_enabled'); then
+if exists("g:plugins_enabled"); then
     call neobundle#end()
     " Prompt installation of uninstalled plugins
     NeoBundleCheck
@@ -619,7 +619,7 @@ function! MapPlugins()
     endif
 endfunction
 
-if exists('g:plugins_enabled')
+if exists("g:plugins_enabled")
     augroup Plugin_Mappings
         autocmd!
         autocmd VimEnter * :call MapPlugins()
