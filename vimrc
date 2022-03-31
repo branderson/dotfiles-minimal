@@ -1,6 +1,8 @@
 " CONFIGURATION
 " PLUGINS ENABLED?
-let g:plugins_enabled=1
+if filereadable('~/.vimrc.plugins_enabled')
+    let g:plugins_enabled=1
+fi
 
 " ------ General Settings ------
 set nocompatible " Turn off vim compatibility mode
@@ -231,9 +233,11 @@ if !has('vim_starting')
     " Reload plugins
     call neobundle#call_hook('on_source')
 endif
-call neobundle#end()
-" Prompt installation of uninstalled plugins
-NeoBundleCheck
+if exists('g:plugins_enabled'); then
+    call neobundle#end()
+    " Prompt installation of uninstalled plugins
+    NeoBundleCheck
+fi
 
 " [4] ------ Plugin Configuration ------
 " [4.1] --- General ---
