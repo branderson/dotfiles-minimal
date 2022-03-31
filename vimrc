@@ -268,7 +268,7 @@ let g:gruvbox_italicize_strings=1
 try
     " TODO: MAKE THIS SILENT
     colorscheme gruvbox
-catch /^Vim\%((\a\++)\)\=:E185/
+catch /E185/
     colorscheme desert
 endtry
 
