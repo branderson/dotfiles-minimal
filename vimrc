@@ -1,6 +1,6 @@
 " CONFIGURATION
 " PLUGINS ENABLED?
-if filereadable('~/.vimrc.plugins_enabled')
+if filereadable("~/.vimrc.plugins_enabled")
     let g:plugins_enabled=1
 endif
 
