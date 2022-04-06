@@ -85,8 +85,6 @@ set foldlevel=20
 source $VIMRUNTIME/menu.vim
 
 " [1.1] --- GUI settings ---
-set lines=50
-set columns=150
 
 " [1.2] --- Language specific settings ---
 " autocmd! BufNewFile,BufReadPre,FileReadPre,BufEnter * set expandtab softtabstop=4 shiftwidth=4
